@@ -11,8 +11,8 @@ lista_categorias = [
     {'descricao':'Frios'},
     {'descricao':'Material Limpeza'}
 ]
-
 # Categoria.insert_many(lista_categorias).execute()
+
 hoje = datetime.date.today()
 
 lista_clientes = [
@@ -26,18 +26,19 @@ lista_clientes = [
 
 # Cliente.insert_many(lista_clientes).execute()
 
-lista_produtos = [
-    {"descricao":"Perfume 100ml",'id_categoria' : Categoria.select().where(Categoria.descricao == "Perfumaria"), "valor": 10.20 },
-    {"descricao":"Danone 150ml",'id_categoria' : Categoria.select().where(Categoria.descricao == "Lacticinios"), "valor": 5.50 },
-    {"descricao":"Caneta Bic esferográfica azul",'id_categoria' : Categoria.select().where(Categoria.descricao == "Material Escolar"), "valor": 1.5 },
-    {"descricao":"Arroz Branco camil 1kg",'id_categoria' : Categoria.select().where(Categoria.descricao == "Cereais"), "valor": 6.50 },
-    {"descricao":"Presunto Sadia",'id_categoria' : Categoria.select().where(Categoria.descricao == "Frios"), "valor": 19.70 },
-    {"descricao":"Desinfetante Quasar ",'id_categoria' : Categoria.select().where(Categoria.descricao == "Material Limpeza"), "valor": 7.40},
-    {"descricao":"Pepel A4 100fls",'id_categoria' : Categoria.select().where(Categoria.descricao == "Papelaria"), "valor": 8.20 },
-    {"descricao":"Queijo Mussarela natvile",'id_categoria' : Categoria.select().where(Categoria.descricao == "Frios"), "valor": 25.60 },
-]
+# lista_produtos = [
+#     {"descricao":"Perfume 100ml",'id_categoria' : Categoria.select().where(Categoria.descricao == "Perfumaria"), "valor": 10.20 },
+#     {"descricao":"Danone 150ml",'id_categoria' : Categoria.select().where(Categoria.descricao == "Lacticinios"), "valor": 5.50 },
+#     {"descricao":"Caneta Bic esferográfica azul",'id_categoria' : Categoria.select().where(Categoria.descricao == "Material Escolar"), "valor": 1.5 },
+#     {"descricao":"Arroz Branco camil 1kg",'id_categoria' : Categoria.select().where(Categoria.descricao == "Cereais"), "valor": 6.50 },
+#     {"descricao":"Presunto Sadia",'id_categoria' : Categoria.select().where(Categoria.descricao == "Frios"), "valor": 19.70 },
+#     {"descricao":"Desinfetante Quasar ",'id_categoria' : Categoria.select().where(Categoria.descricao == "Material Limpeza"), "valor": 7.40},
+#     {"descricao":"Pepel A4 100fls",'id_categoria' : Categoria.select().where(Categoria.descricao == "Papelaria"), "valor": 8.20 },
+# ]
 
-#Produtos.insert_many(lista_produtos).execute()
+# Produtos.insert_many(lista_produtos).execute()
+
+
 
 
 # produtos = Produtos.select()
@@ -47,8 +48,6 @@ lista_produtos = [
 #         valor = linha.valor,
 #         data = datetime.date.today()
 #     )
-
-
 
 # função para inserir vendas
 def inserirVenda(nomeCliente, nomeProduto, quant):

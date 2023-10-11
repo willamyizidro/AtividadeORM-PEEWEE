@@ -8,15 +8,23 @@ def imprimirHistoricoPrecos(nome):
     cons = Historico_Precos.select(Historico_Precos.data, Historico_Precos.valor).where(Produtos.descricao == nome).join(Produtos)
     if cons:
         print("Historico de preços do produto: ", nome)
-        for linha in cons:
-            print("Valor: R$",linha.valor , "Data: ",linha.data )
+        for x in cons:
+            print("Valor: R$",x.valor , "Data: ",x.data )
         print()
 
 imprimirHistoricoPrecos("Caneta Bic esferográfica azul")
+imprimirHistoricoPrecos("perfume")
 
 
 # 2 - Liste descrição e preço de todos os produtos da categoria "Papelaria", 
 # ordenados no menor para o maior preço.
+
+prod = Produtos(
+    descricao = "papel a5",
+    id_categoria = Categoria.select(Categoria.id).where(Categoria.descricao == "Papelaria").limit(1),
+    valor = 25.5
+)
+prod.save()
 
 def imprimirListaCategoria(cat):
     cons = Produtos.select(Produtos.descricao, Produtos.valor).where(Categoria.descricao == cat).join(Categoria).order_by(Produtos.valor.asc())
